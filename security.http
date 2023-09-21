@@ -1,0 +1,2 @@
+GET http://localhost:8080
+Authorization: Basic user:123456
