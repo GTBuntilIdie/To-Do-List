@@ -3,6 +3,7 @@ package com.example.todoist.security;
 import com.example.todoist.dto.UserDto;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.RequestScope;
 
@@ -12,7 +13,7 @@ import java.util.Optional;
 
 @Component
 @RequestScope
-public class ToDoListUserDetails {
+public class ToDoListUserDetails implements UserDetails {
 
     private UserDto userDto;
 
@@ -37,6 +38,33 @@ public class ToDoListUserDetails {
         return Optional.ofNullable(userDto)
                 .map(UserDto::getPassword)
                 .orElse(null);
+    }
+
+    @Override
+    public String getUsername() {
+        return Optional.ofNullable(userDto)
+                .map(UserDto::getEmail)
+                .orElse(null);
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
     }
 
 

@@ -1,9 +1,12 @@
 package com.example.todoist.service;
 
 import com.example.todoist.dto.TaskDto;
+import com.example.todoist.exception.TaskNotFoundException;
 import com.example.todoist.mapper.TaskMapper;
 import com.example.todoist.model.Task;
 import com.example.todoist.repository.TaskRepository;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Service;
 
 @Service

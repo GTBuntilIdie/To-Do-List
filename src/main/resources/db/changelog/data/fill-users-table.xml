@@ -20,7 +20,8 @@
         <insert tableName="users">
             <column name="name">admin</column>
             <column name="email">admin@mail.ru</column>
-            <column name="password">1234567</column>
+            <column name="password"><!--1234567-->$2a$12$fMp1c/dvt3nlAkIr/JrcB.xeYnZvUAsYxVlymWf5h1i4Bb4tz5cQq
+            </column>
 
             <column name="role">ADMIN</column>
         </insert>

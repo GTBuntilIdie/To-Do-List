@@ -1,2 +1,2 @@
-POST http://localhost:8080/tasks
-Authorization: Basic admin:123456
+POST http://localhost:8080
+Authorization: Basic admin:1234567
